@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avengers Discussion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="heroes.html">Heroes</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="media.html">Media</a>
+      <a href="community.html">Community</a>
+      <a href="discussion.html" aria-current="page">Discussion</a>
+      <a href="merch.html">Merch</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Avengers Discussion</h1>
+
+    <!-- Sample posts -->
+    <section class="discussion-post">
+      <div class="post-header">
+        <span>StarLord92</span>
+        <span>June 10, 2025</span>
+      </div>
+      <div class="post-content">
+        <p>Does anyone think Captain Marvel will play a bigger role in the upcoming movies?</p>
+      </div>
+    </section>
+
+    <section class="discussion-post">
+      <div class="post-header">
+        <span>QuantumQueen</span>
+        <span>June 9, 2025</span>
+      </div>
+      <div class="post-content">
+        <p>The Quantum Realm stuff is mind-boggling! Can't wait to see how it evolves.</p>
+      </div>
+    </section>
+
+    <!-- Add new post form -->
+    <form id="newPostForm">
+      <label for="username">Your Name</label>
+      <input type="text" id="username" name="username" placeholder="Enter your name" required />
+
+      <label for="postContent">Your Post</label>
+      <textarea id="postContent" name="postContent" rows="4" placeholder="Write your thoughts here..." required></textarea>
+
+      <button type="submit">Post</button>
+    </form>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Avengers Community. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Simple front-end JS to add new posts without a backend
+    const form = document.getElementById('newPostForm');
+    const main = document.querySelector('main');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const username = form.username.value.trim();
+      const content = form.postContent.value.trim();
+      if (!username || !content) return;
+
+      // Create new post elements
+      const postSection = document.createElement('section');
+      postSection.classList.add('discussion-post');
+
+      const headerDiv = document.createElement('div');
+      headerDiv.classList.add('post-header');
+      headerDiv.innerHTML = `<span>${username}</span><span>${new Date().toLocaleDateString()}</span>`;
+
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('post-content');
+      contentDiv.textContent = content;
+
+      postSection.appendChild(headerDiv);
+      postSection.appendChild(contentDiv);
+
+      // Insert new post before form
+      main.insertBefore(postSection, form);
+
+      // Reset form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

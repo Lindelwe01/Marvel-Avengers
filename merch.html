@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avengers Merchandise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+    <header class="navbar">
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="heroes.html">HEROES</a>
+    <a href="timeline.html">TIMELINE</a>
+    <a href="media.html">MEDIA</a>
+    <a href="merch.html">MERCH</a>
+  </nav>
+</header>
+  <h1>Avengers Merchandise</h1>
+  <div class="merch-grid">
+    <div class="merch-item">
+      <img src="images/captain america cup.jpeg" alt="Captain America Shield Mug" />
+      <h3>Captain America Shield Mug</h3>
+      <p class="price"><R265></p>
+        <button onclick="buyNow('Captain America Shield Mug', 265)">Buy Now</button>
+
+    </div>
+
+    <div class="merch-item">
+      <img src="images/ironman helmet.jpeg" alt="Iron Man Helmet Replica" />
+      <h3>Iron Man Helmet Replica</h3>
+      <p class="price">R3527.99</p>
+<button onclick="buyNow('Iron Man Helmet Replica', 3527.99)">Buy Now</button>
+    </div>
+
+    <div class="merch-item">
+      <img src="images/thor hammer.jpeg" alt="Thor's Mjolnir Hammer" />
+      <h3>Thor's Mjolnir Hammer</h3>
+      <p class="price">R1595.99</p>
+     <button onclick="buyNow('Thor\'s Mjolnir Hammer', 1595.99)">Buy Now</button>
+    </div>
+
+    <div class="merch-item">
+      <img src="images/hulk fist gloves.jpeg" alt="Hulk Fist Gloves" />
+      <h3>Hulk Fist Gloves</h3>
+      <p class="price">R531.66</p>
+    <button onclick="buyNow('Hulk Fist Gloves', 531.66)">Buy Now</button>
+    </div>
+
+    <div class="merch-item">
+      <img src="images/bw action figure.jpeg" alt="Black Widow Action Figure" />
+      <h3>Black Widow Action Figure</h3>
+      <p class="price">R443.20</p>
+   <button onclick="buyNow('Black Widow Action Figure', 443.20)">Buy Now</button>
+    </div>
+
+    <div class="merch-item">
+      <img src="images/461062536980.avif" alt="Hawkeye Bow & Arrow Set" />
+      <h3>Hawkeye Bow & Arrow Set</h3>
+      <p class="price">R886.25</p>
+      <button onclick="buyNow('Hawkeye Bow & Arrow Set', 886.25)">Buy Now</button>
+    </div>
+  </div>
+<script>
+function buyNow(productName, price) {
+  const formattedPrice = new Intl.NumberFormat('en-ZA', {
+    style: 'currency',
+    currency: 'ZAR'
+  }).format(price);
+  
+  alert("You selected: " + productName + "\nPrice: " + formattedPrice);
+}
+</script>
+  <footer>
+    Avengers Merchandise &copy; 2025
+  </footer>
+</body>
+</html>
